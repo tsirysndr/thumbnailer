@@ -170,7 +170,8 @@ func matchMP4(data []byte) (string, string) {
 			continue
 		}
 		if bytes.Equal(data[st:st+3], []byte("mp4")) ||
-			bytes.Equal(data[st:st+4], []byte("dash")) {
+			bytes.Equal(data[st:st+4], []byte("dash")) ||
+			bytes.Equal(data[st:st+3], []byte("M4V")) {
 			return "video/mp4", "mp4"
 		}
 	}
